@@ -1,5 +1,7 @@
 # Nucleo experimental C++
 
+**Candidata mais recente v2 — fronteira radial:** [normalização e classificação](../docs/math/FRONTEIRA_RADIAL.md) limita P,Q a [0,1], preserva valores brutos/cortes e usa raio sqrt(2−sqrt(2)) em torno de (1,0), definido pelo equilíbrio de 45 graus na circunferência unitária. Essa convenção geométrica tem implementação e resultados próprios; não substitui os arquivos da candidata v1 ou as evidências históricas abaixo.
+
 **Nova iteração P,Q,D:** [formalismo e decomposição](../docs/math/FORMALISMO_PQ.md), [plano de correlação](../docs/math/PLANO_CORRELACAO.md) e [fixtures de observações](../docs/math/CONTRATO_FIXTURES.md). P e Q são definidos independentemente de S; S=hypot(P,Q) e D=hypot(P−1,Q), com referência fixa (1,0). Matrizes temporais [P,Q,D], tensores serviço×métrica×tempo e plots sintéticos estão em [harmonic_lab](harmonic_lab/README.md). A candidata observacional está em `pq_contract/`. As seções abaixo preservam o histórico anterior, em que S era imposto e P>S podia invalidar o triângulo; não descrevem a nova hipótese.
 
 Terceira hipotese, experimental e separada: [CPU utilizada/request na hipotenusa](CPU_TRIANGLE_REVIEW.md), com nova coleta emparelhada e grade de 720 casos.

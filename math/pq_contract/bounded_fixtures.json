@@ -1,0 +1,24 @@
+{
+  "contract": "bounded-radial-fixture-v2",
+  "source_kind": "synthetic",
+  "reference": {"throughput_per_second": 100.0, "latency_seconds": 0.1, "error_fraction": 0.2},
+  "observations": [
+    {"id": "reference_point", "observation": {"duration_seconds": 1, "completed": 100, "failed": 0, "mean_latency_seconds": 0.1}},
+    {"id": "above_throughput_reference", "observation": {"duration_seconds": 1, "completed": 200, "failed": 0, "mean_latency_seconds": 0.1}},
+    {"id": "all_failed_with_latency_excess", "observation": {"duration_seconds": 1, "completed": 100, "failed": 100, "mean_latency_seconds": 0.3}},
+    {"id": "latency_only_above_reference", "observation": {"duration_seconds": 1, "completed": 100, "failed": 0, "mean_latency_seconds": 0.4}},
+    {"id": "mixed_error_and_latency", "observation": {"duration_seconds": 1, "completed": 100, "failed": 20, "mean_latency_seconds": 0.2}},
+    {"id": "no_traffic", "observation": {"duration_seconds": 1, "completed": 0, "failed": 0, "mean_latency_seconds": null}},
+    {"id": "missing_counts", "observation": {"duration_seconds": 1, "completed": null, "failed": null, "mean_latency_seconds": null}},
+    {"id": "missing_latency", "observation": {"duration_seconds": 1, "completed": 100, "failed": 0, "mean_latency_seconds": null}},
+    {"id": "invalid_negative_count", "observation": {"duration_seconds": 1, "completed": -1, "failed": 0, "mean_latency_seconds": 0.1}}
+  ],
+  "geometry": [
+    {"id": "ideal", "P": 1.0, "Q": 0.0},
+    {"id": "balanced_unit45", "P": 0.7071067811865475, "Q": 0.7071067811865475},
+    {"id": "geometric_rest", "P": 0.0, "Q": 0.0},
+    {"id": "corner_one_one", "P": 1.0, "Q": 1.0},
+    {"id": "small_equal_pair", "P": 0.1, "Q": 0.1},
+    {"id": "missing", "P": null, "Q": null}
+  ]
+}

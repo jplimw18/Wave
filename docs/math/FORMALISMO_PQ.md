@@ -1,5 +1,7 @@
 # P e Q independentes de S: contrato e decomposição
 
+**Nova candidata v2:** [normalização e fronteira radial](FRONTEIRA_RADIAL.md) fixa P,Q em [0,1], conserva valores anteriores ao corte e classifica D em relação ao raio sqrt(2−sqrt(2)), centrado em (1,0). As fórmulas observacionais sem limite superior descritas abaixo são a v1 preservada para comparação. As identidades geométricas e os limites de identificação continuam aplicáveis; a classificação de eficiência é uma convenção adicional, não uma consequência dessas identidades.
+
 Esta proposta sucede os experimentos de `math/README.md`, sem apagar suas hipóteses ou resultados. A independência aqui é **de definição**: P e Q são calculados das métricas, sem usar S; depois S=hypot(P,Q). Não se afirma independência estatística entre P e Q. Compartilhar erros, latência, demanda ou infraestrutura geralmente os torna dependentes.
 
 ## 1. Contrato por serviço e janela

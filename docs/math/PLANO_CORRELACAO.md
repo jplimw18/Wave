@@ -1,5 +1,7 @@
 # Plano de correlação por serviço e validação iterativa
 
+**Rodada adicional v2:** aplicar o contrato da [fronteira radial](FRONTEIRA_RADIAL.md), mantendo a v1 como comparação. Fixar Tref/Lref/eref antes da rodada; conservar valores brutos e indicadores de corte. Avaliar separadamente as classes dentro/fronteira/fora/ausente e o estado ocioso. Incluir o ponto unitário B45, casos P=Q de amplitudes diferentes, extremos do quadrado e passagens pela fronteira. A fronteira circular é uma hipótese de classificação; confrontá-la com os resultados externos definidos neste plano. Comparar desempenho dos modelos sobre valores brutos, índices limitados e indicadores de corte para quantificar a perda por saturação. Não usar os máximos/mínimos da série para ajustar a referência de equilíbrio.
+
 Estado desta entrega: inspeção de arquivos e experimentos matemáticos locais. Nenhuma nova coleta de cluster foi feita por esta frente. `README.md` e `STATUS.md` registram o laboratório validado em 12/10/2026; o estado de execução atual precisa de verificação operacional separada. O código local mostra APIs api-a/api-b, PostgreSQL e Collector com receivers Prometheus/PostgreSQL. Não há kubeletstats no manifesto inspecionado.
 
 ## 1. Inventário e população
