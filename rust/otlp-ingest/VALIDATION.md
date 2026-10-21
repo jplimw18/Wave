@@ -15,11 +15,11 @@ cargo clippy --locked --all-targets -- -D warnings
 ```
 
 Resultado: teste de integração gRPC aprovado (1 teste, 0 falhas); compilação do
-binário e biblioteca aprovadas; Clippy finalizado com exit code 0 sem warnings.
-Não há unit tests adicionais; não contar os alvos com zero testes como evidência.
+binário e biblioteca aprovadas; Clippy finalizado com código de saída 0 sem avisos.
+Não há testes unitários adicionais; não contar os alvos com zero testes como evidência.
 
 O teste usa porta efêmera loopback, servidor tonic e cliente OTLP reais, métrica
-sintética `test.cpu.cores=0.25`, resource `service.name=api-a`, timestamp conservado.
+sintética `test.cpu.cores=0.25`, recurso `service.name=api-a`, horário de registro preservado.
 Compara protobuf decodificado do journal à mensagem original, recusa journal
 existente e verifica que lote acima de 8 MiB não altera o arquivo.
 
@@ -27,3 +27,4 @@ Não foi executada homologação Collector → Rust dentro do Minikube. O perfil
 aim-lab foi consultado e estava Stopped nesta sessão. Não há nova captura real,
 teste de carga, validação de cancelamento/falha de disco, TLS, spans ou ABI final.
 O teste numérico de P/Q/D é separado e não é comprovado pelo sucesso gRPC.
+

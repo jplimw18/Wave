@@ -37,7 +37,7 @@ por `OTLP_JOURNAL`; não apague capturas para reiniciar. Dentro do container,
 
 ## Encaminhamento pelo laboratório
 
-O lab existente coleta Prometheus/PostgreSQL e exporta snapshot Prometheus;
+O laboratório existente coleta Prometheus/PostgreSQL e exporta uma fotografia dos dados em formato Prometheus;
 não possui saída OTLP automaticamente. O fragmento collector-export.example.yaml
 mostra o exporter a adicionar em infra/collector.yaml, preservando os existentes.
 Para Collector dentro do Minikube, o endereço precisa ser alcançável a partir do
@@ -47,21 +47,21 @@ Não aplicar este fragmento isoladamente: ele não contém os receivers e creden
 do laboratório. A implantação em homl deverá demonstrar Collector → Rust com
 dados reais antes de aceitar a integração.
 
-## Journal e semântica de aceitação
+## Registro de lotes e semântica de aceitação
 
 Cada frame é `[comprimento u32 little-endian][ExportMetricsServiceRequest protobuf]`.
 Não é protobuf length-delimited varint, arquivo OTLP padrão nem ABI final.
 O cabeçalho tem 4 bytes; limites de frame: 8 MiB. Lotes são serializados sob mutex;
 ACK ocorre após write_all + sync_data. Uma falha desabilita novas escritas até
 reinício com outro caminho, evitando continuar após frame potencialmente parcial.
-Leitores devem detectar header/payload incompletos e preservar evidência.
-Até 32 persistências pendentes são aceitas; excesso recebe UNAVAILABLE para retry.
+Leitores devem detectar cabeçalhos e conteúdos incompletos e preservar evidência.
+Até 32 persistências pendentes são aceitas; excesso recebe UNAVAILABLE para nova tentativa.
 A tarefa de persistência continua se a chamada gRPC for cancelada, evitando que
 cancelamento interrompa uma gravação no meio e permita outra sobre frame parcial.
 
-Não há deduplicação, replay, retenção ou garantia exactly-once. Queda entre gravação
-e ACK pode gerar duplicatas por retry. sync_data não é garantia contra toda falha de
-filesystem/host, nem sincronização da entrada de diretório. Não há autenticação/TLS;
+Não há deduplicação, replay, retenção ou garantia de entrega exatamente uma vez. Queda entre gravação
+e ACK pode gerar duplicatas por nova tentativa. sync_data não é garantia contra toda falha de
+sistema de arquivos ou máquina, nem sincronização da entrada de diretório. Não há autenticação/TLS;
 esta configuração destina-se ao laboratório local e não deve ser exposta externamente.
 
 Teste grpc.rs abre servidor/cliente gRPC reais em loopback, envia uma métrica
@@ -71,11 +71,11 @@ Não confundir esse teste com coleta real do Minikube.
 
 ## Evolução condicionada à matemática
 
-1. Preservar batches brutos e metadados de captura; construir janelas sem misturar
+1. Preservar lotes brutos e metadados de captura; construir janelas sem misturar
    cumulativos/deltas nem médias de percentis.
 2. Gerar contrato de observações aceito pela análise matemática, com unidades,
    referências versionadas, valores ausentes e cobertura explícitos.
-3. Comparar resultados Python/Rust em fixtures idênticas antes de definir ABI.
+3. Comparar resultados Python/Rust com os mesmos dados de teste antes de definir ABI.
 4. Adicionar recepção/geração/transmissão de spans e seu controle de fluxo em PR próprio.
 
 A orientação matemática atual usa também D(t)=hypot(P(t)-1,Q(t)), com referência
@@ -83,3 +83,4 @@ A orientação matemática atual usa também D(t)=hypot(P(t)-1,Q(t)), com refer�
 deve ser confundido com uma métrica independente coletada dos containers.
 
 Fontes: https://docs.rs/opentelemetry-proto/0.32.0/ e https://docs.rs/tonic/0.14.6/.
+

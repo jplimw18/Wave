@@ -1,4 +1,4 @@
-//! OTLP ingress only: preserves protobuf batches without interpreting experimental P/Q.
+//! Apenas recepção OTLP: preserva lotes Protobuf sem interpretar o modelo experimental P/Q.
 use opentelemetry_proto::tonic::collector::metrics::v1::{
     metrics_service_server::MetricsService, ExportMetricsServiceRequest,
     ExportMetricsServiceResponse,
@@ -25,8 +25,8 @@ pub struct Ingest {
 }
 
 impl Ingest {
-    /// Refuses an existing path: each run gets a fresh journal. Interrupted journals
-    /// must be inspected offline; appending could conceal a truncated frame.
+    /// Recusa caminho existente: cada execução cria um novo registro de lotes. Registros interrompidos
+    /// devem ser inspecionados separadamente; acrescentar dados pode ocultar um quadro truncado.
     pub async fn create(path: impl AsRef<Path>) -> io::Result<Self> {
         let file = File::options()
             .write(true)
@@ -59,13 +59,13 @@ impl MetricsService for Ingest {
             .try_acquire_owned()
             .map_err(|_| Status::unavailable("journal busy; retry later"))?;
         let payload = batch.encode_to_vec();
-        // One complete length-delimited protobuf frame per accepted Export call.
+        // Um quadro Protobuf completo, com comprimento prefixado, por chamada Export aceita.
         let mut frame = Vec::with_capacity(payload.len() + 4);
         frame.extend_from_slice(&(payload.len() as u32).to_le_bytes());
         frame.extend_from_slice(&payload);
         let journal = self.journal.clone();
-        // Detached persistence survives cancellation of the RPC future. Otherwise
-        // cancellation during write_all could leave a partial frame before the next.
+        // A persistência independente continua após o cancelamento da chamada RPC. Caso contrário,
+        // cancelar durante write_all poderia deixar um quadro parcial antes do próximo.
         tokio::spawn(async move {
             let _permit = permit;
             let mut journal = journal.lock().await;
@@ -92,3 +92,4 @@ impl MetricsService for Ingest {
         .map_err(|_| Status::internal("journal task failed"))?
     }
 }
+
