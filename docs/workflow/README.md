@@ -1,5 +1,6 @@
 # Fluxo de trabalho Wave
 
+Kanban: https://github.com/users/jplimw18/projects/2/views/2
 Project: https://github.com/users/jplimw18/projects/2
 Repositório: https://github.com/jplimw18/Wave
 
@@ -25,3 +26,6 @@ Cada iteração deve registrar versão do modelo, dataset, comandos, tolerância
 ## Operação do Project
 
 As issues iniciais foram adicionadas em Triagem. A movimentação subsequente exige evidência correspondente; não foi configurada automação de transição. Toda issue nova deve ser adicionada ao Project e triada. Dependências e aceite devem constar do corpo da issue ou PR.
+
+
+A visão Kanban — acompanhamento usa Status como colunas na ordem Triagem, Backlog, Análise, Implementação, Testes, Validação e Concluído. Os cards mostram título e labels de área/prioridade; Lista de entregas permanece como visão tabular auxiliar. As prioridades são alta para o foco atual e normal para as próximas dependências.
