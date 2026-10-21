@@ -92,4 +92,3 @@ impl MetricsService for Ingest {
         .map_err(|_| Status::internal("journal task failed"))?
     }
 }
-
