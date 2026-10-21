@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.0" y="26" text-anchor="middle" font-family="sans-serif" font-size="17">SINTÉTICO — distância D ao ponto (1,0)</text>
+<text x="380.0" y="410" text-anchor="middle" font-family="sans-serif" font-size="12">janela temporal</text>
+<text x="15" y="210.0" font-family="sans-serif" font-size="12">D = hypot(P−1,Q)</text>
+<path d="M72 52 V365 H736" fill="none" stroke="#555"/>
+<path d="M72.0 52 V365" stroke="#ddd"/>
+<text x="72.0" y="382" text-anchor="middle" font-family="sans-serif" font-size="10">0</text>
+<path d="M72 365.0 H736" stroke="#eee"/>
+<text x="65" y="369.0" text-anchor="end" font-family="sans-serif" font-size="10">0.0577</text>
+<path d="M238.0 52 V365" stroke="#ddd"/>
+<text x="238.0" y="382" text-anchor="middle" font-family="sans-serif" font-size="10">2.75</text>
+<path d="M72 286.8 H736" stroke="#eee"/>
+<text x="65" y="290.8" text-anchor="end" font-family="sans-serif" font-size="10">0.319</text>
+<path d="M404.0 52 V365" stroke="#ddd"/>
+<text x="404.0" y="382" text-anchor="middle" font-family="sans-serif" font-size="10">5.5</text>
+<path d="M72 208.5 H736" stroke="#eee"/>
+<text x="65" y="212.5" text-anchor="end" font-family="sans-serif" font-size="10">0.581</text>
+<path d="M570.0 52 V365" stroke="#ddd"/>
+<text x="570.0" y="382" text-anchor="middle" font-family="sans-serif" font-size="10">8.25</text>
+<path d="M72 130.2 H736" stroke="#eee"/>
+<text x="65" y="134.2" text-anchor="end" font-family="sans-serif" font-size="10">0.842</text>
+<path d="M736.0 52 V365" stroke="#ddd"/>
+<text x="736.0" y="382" text-anchor="middle" font-family="sans-serif" font-size="10">11</text>
+<path d="M72 52.0 H736" stroke="#eee"/>
+<text x="65" y="56.0" text-anchor="end" font-family="sans-serif" font-size="10">1.1</text>
+<text x="740" y="45" text-anchor="end" font-family="sans-serif" font-size="11">SINTÉTICO</text>
+<polyline points="72.0,90.6 132.4,81.3 192.7,79.7 253.1,100.9 313.5,152.8 373.8,230.8 434.2,312.6 494.5,315.4 554.9,262.2 615.3,233.7 675.6,230.5 736.0,222.1" fill="none" stroke="#1769aa" stroke-width="2"/>
+<text x="626" y="52" font-family="sans-serif" font-size="12" fill="#1769aa">serviço 1</text>
+<polyline points="72.0,84.1 132.4,72.6 192.7,81.6 253.1,121.8 313.5,192.6 373.8,280.7 434.2,345.0 494.5,301.9 554.9,264.3 615.3,254.6 675.6,245.8 736.0,200.5" fill="none" stroke="#e67e22" stroke-width="2"/>
+<text x="626" y="70" font-family="sans-serif" font-size="12" fill="#e67e22">serviço 2</text>
+<polyline points="72.0,68.4 132.4,65.2 192.7,92.7 253.1,153.6 313.5,238.7 373.8,328.0 434.2,343.0 494.5,297.7 554.9,280.4 615.3,270.0 675.6,224.6 736.0,147.8" fill="none" stroke="#2e8b57" stroke-width="2"/>
+<text x="626" y="88" font-family="sans-serif" font-size="12" fill="#2e8b57">serviço 3</text>
+<polyline points="72.0,52.0 132.4,66.5 192.7,115.8 253.1,194.1 313.5,285.3 373.8,365.0 434.2,333.8 494.5,308.2 554.9,294.5 615.3,248.4 675.6,168.2 736.0,85.0" fill="none" stroke="#9c27b0" stroke-width="2"/>
+<text x="626" y="106" font-family="sans-serif" font-size="12" fill="#9c27b0">serviço 4</text>
+</svg>

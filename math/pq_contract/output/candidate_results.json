@@ -1,0 +1,342 @@
+{
+  "model_id": "pq-goodput-latency-error-v1",
+  "fixture_contract": "observation-fixture-v1",
+  "historical_source": "math\\pq_contract\\fixtures\\historical-windows.json",
+  "historical_original_source": "evidence/real-windows.json",
+  "historical_sha256": "1312f0dee386181c8f597daf3fccba4abecdb407e50055b40fdc6edc4667f0ce",
+  "historical_date_documented": "2026-10-12",
+  "date_provenance": "STATUS.md; source JSON contains monotonic clocks, not UTC timestamps",
+  "reset_provenance": "Historical resets not independently audited here; nonnegative deltas assumed valid",
+  "new_cluster_collection": false,
+  "records": [
+    {
+      "id": "reference_point",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 100,
+        "failed": 0,
+        "mean_latency_seconds": 0.1
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "ok",
+        "reason": null,
+        "P": 1.0,
+        "Q": 0.0,
+        "S": 1.0,
+        "D": 0.0,
+        "theta": 0.0,
+        "z_latency": 0.0,
+        "z_error": 0.0
+      }
+    },
+    {
+      "id": "success_below_reference",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 80,
+        "failed": 0,
+        "mean_latency_seconds": 0.05
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "ok",
+        "reason": null,
+        "P": 0.8,
+        "Q": 0.0,
+        "S": 0.8,
+        "D": 0.19999999999999996,
+        "theta": 0.0,
+        "z_latency": 0.0,
+        "z_error": 0.0
+      }
+    },
+    {
+      "id": "latency_and_error",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 100,
+        "failed": 20,
+        "mean_latency_seconds": 0.2
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "ok",
+        "reason": null,
+        "P": 0.8,
+        "Q": 1.0,
+        "S": 1.2806248474865698,
+        "D": 1.019803902718557,
+        "theta": 0.8960553845713439,
+        "z_latency": 1.0,
+        "z_error": 1.0
+      }
+    },
+    {
+      "id": "above_throughput_reference",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 200,
+        "failed": 0,
+        "mean_latency_seconds": 0.1
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "ok",
+        "reason": null,
+        "P": 2.0,
+        "Q": 0.0,
+        "S": 2.0,
+        "D": 1.0,
+        "theta": 0.0,
+        "z_latency": 0.0,
+        "z_error": 0.0
+      }
+    },
+    {
+      "id": "all_failed",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 100,
+        "failed": 100,
+        "mean_latency_seconds": 0.1
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "ok",
+        "reason": null,
+        "P": 0.0,
+        "Q": 3.5355339059327373,
+        "S": 3.5355339059327373,
+        "D": 3.674234614174767,
+        "theta": 1.5707963267948966,
+        "z_latency": 0.0,
+        "z_error": 5.0
+      }
+    },
+    {
+      "id": "no_traffic",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 0,
+        "failed": 0,
+        "mean_latency_seconds": null
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "partial",
+        "reason": "no_traffic",
+        "P": 0.0,
+        "Q": null,
+        "S": null,
+        "D": null,
+        "theta": null,
+        "z_latency": null,
+        "z_error": null
+      }
+    },
+    {
+      "id": "missing_counts",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": null,
+        "failed": null,
+        "mean_latency_seconds": null
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "missing",
+        "reason": "missing_counts",
+        "P": null,
+        "Q": null,
+        "S": null,
+        "D": null,
+        "theta": null,
+        "z_latency": null,
+        "z_error": null
+      }
+    },
+    {
+      "id": "missing_latency",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 80,
+        "failed": 0,
+        "mean_latency_seconds": null
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "partial",
+        "reason": "missing_latency",
+        "P": 0.8,
+        "Q": null,
+        "S": null,
+        "D": null,
+        "theta": null,
+        "z_latency": null,
+        "z_error": null
+      }
+    },
+    {
+      "id": "counter_reset",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 80,
+        "failed": 0,
+        "mean_latency_seconds": 0.1,
+        "counter_reset": true
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "invalid",
+        "reason": "counter_reset",
+        "P": null,
+        "Q": null,
+        "S": null,
+        "D": null,
+        "theta": null,
+        "z_latency": null,
+        "z_error": null
+      }
+    },
+    {
+      "id": "invalid_counts",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 10,
+        "failed": 11,
+        "mean_latency_seconds": 0.1
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "invalid",
+        "reason": "invalid_counts",
+        "P": null,
+        "Q": null,
+        "S": null,
+        "D": null,
+        "theta": null,
+        "z_latency": null,
+        "z_error": null
+      }
+    },
+    {
+      "id": "api-a",
+      "source_kind": "historical_real_lab_measurement",
+      "workload_kind": "synthetic_application",
+      "observation": {
+        "duration_seconds": 10.043523572999902,
+        "completed": 249,
+        "failed": 0,
+        "mean_latency_seconds": 0.017338855469881172,
+        "counter_reset": false
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "ok",
+        "reason": null,
+        "P": 0.24792095940252384,
+        "Q": 0.0,
+        "S": 0.24792095940252384,
+        "D": 0.7520790405974762,
+        "theta": 0.0,
+        "z_latency": 0.0,
+        "z_error": 0.0
+      }
+    },
+    {
+      "id": "api-b",
+      "source_kind": "historical_real_lab_measurement",
+      "workload_kind": "synthetic_application",
+      "observation": {
+        "duration_seconds": 10.083505723000144,
+        "completed": 248,
+        "failed": 0,
+        "mean_latency_seconds": 0.01754892494757461,
+        "counter_reset": false
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-goodput-latency-error-v1",
+        "status": "ok",
+        "reason": null,
+        "P": 0.2459462084048013,
+        "Q": 0.0,
+        "S": 0.2459462084048013,
+        "D": 0.7540537915951987,
+        "theta": 0.0,
+        "z_latency": 0.0,
+        "z_error": 0.0
+      }
+    }
+  ]
+}
