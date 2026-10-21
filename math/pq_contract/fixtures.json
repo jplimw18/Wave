@@ -1,0 +1,17 @@
+{
+  "contract": "observation-fixture-v1",
+  "source_kind": "synthetic",
+  "reference": {"throughput_per_second": 100.0, "latency_seconds": 0.1, "error_fraction": 0.2},
+  "cases": [
+    {"id": "reference_point", "observation": {"duration_seconds": 1, "completed": 100, "failed": 0, "mean_latency_seconds": 0.1}},
+    {"id": "success_below_reference", "observation": {"duration_seconds": 1, "completed": 80, "failed": 0, "mean_latency_seconds": 0.05}},
+    {"id": "latency_and_error", "observation": {"duration_seconds": 1, "completed": 100, "failed": 20, "mean_latency_seconds": 0.2}},
+    {"id": "above_throughput_reference", "observation": {"duration_seconds": 1, "completed": 200, "failed": 0, "mean_latency_seconds": 0.1}},
+    {"id": "all_failed", "observation": {"duration_seconds": 1, "completed": 100, "failed": 100, "mean_latency_seconds": 0.1}},
+    {"id": "no_traffic", "observation": {"duration_seconds": 1, "completed": 0, "failed": 0, "mean_latency_seconds": null}},
+    {"id": "missing_counts", "observation": {"duration_seconds": 1, "completed": null, "failed": null, "mean_latency_seconds": null}},
+    {"id": "missing_latency", "observation": {"duration_seconds": 1, "completed": 80, "failed": 0, "mean_latency_seconds": null}},
+    {"id": "counter_reset", "observation": {"duration_seconds": 1, "completed": 80, "failed": 0, "mean_latency_seconds": 0.1, "counter_reset": true}},
+    {"id": "invalid_counts", "observation": {"duration_seconds": 1, "completed": 10, "failed": 11, "mean_latency_seconds": 0.1}}
+  ]
+}

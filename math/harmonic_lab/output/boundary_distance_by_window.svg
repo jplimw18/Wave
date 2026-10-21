@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380" y="28" text-anchor="middle" font-family="sans-serif" font-size="17">SINTÉTICO — D por janela e raio de fronteira</text>
+<path d="M75 55 V380 H735" fill="none" stroke="#555"/>
+<path d="M75 149.7 H735" stroke="#d33" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="560" y="142.7" fill="#d33" font-family="sans-serif">r=0.7654</text>
+<text x="380" y="425" text-anchor="middle" font-family="sans-serif">janela</text>
+<text x="12" y="230" font-family="sans-serif">D</text>
+<path d="M75.0 55 V380" stroke="#eee"/>
+<text x="75.0" y="396" text-anchor="middle" font-family="sans-serif" font-size="10">0</text>
+<path d="M75 380.0 H735" stroke="#eee"/>
+<text x="68" y="384.0" text-anchor="end" font-family="sans-serif" font-size="10">0.00</text>
+<path d="M240.0 55 V380" stroke="#eee"/>
+<text x="240.0" y="396" text-anchor="middle" font-family="sans-serif" font-size="10">3</text>
+<path d="M75 298.8 H735" stroke="#eee"/>
+<text x="68" y="302.8" text-anchor="end" font-family="sans-serif" font-size="10">0.27</text>
+<path d="M405.0 55 V380" stroke="#eee"/>
+<text x="405.0" y="396" text-anchor="middle" font-family="sans-serif" font-size="10">6</text>
+<path d="M75 217.5 H735" stroke="#eee"/>
+<text x="68" y="221.5" text-anchor="end" font-family="sans-serif" font-size="10">0.54</text>
+<path d="M570.0 55 V380" stroke="#eee"/>
+<text x="570.0" y="396" text-anchor="middle" font-family="sans-serif" font-size="10">8</text>
+<path d="M75 136.3 H735" stroke="#eee"/>
+<text x="68" y="140.3" text-anchor="end" font-family="sans-serif" font-size="10">0.81</text>
+<path d="M735.0 55 V380" stroke="#eee"/>
+<text x="735.0" y="396" text-anchor="middle" font-family="sans-serif" font-size="10">11</text>
+<path d="M75 55.0 H735" stroke="#eee"/>
+<text x="68" y="59.0" text-anchor="end" font-family="sans-serif" font-size="10">1.08</text>
+<polyline points="75.0,380.0 135.0,200.3 195.0,159.0 255.0,127.6 315.0,109.8 375.0,107.8 435.0,122.4 495.0,153.0 555.0,195.9 615.0,243.9 675.0,281.3 735.0,281.4" fill="none" stroke="#1769aa" stroke-width="2"/><text x="640" y="55" fill="#1769aa" font-family="sans-serif" font-size="12">serviço 1</text>
+<polyline points="75.0,149.7 135.0,168.6 195.0,137.5 255.0,118.3 315.0,112.1 375.0,120.1 435.0,142.8 495.0,179.3 555.0,224.9 615.0,267.3 675.0,280.7 735.0,252.9" fill="none" stroke="#e67e22" stroke-width="2"/><text x="640" y="71" fill="#e67e22" font-family="sans-serif" font-size="12">serviço 2</text>
+<polyline points="75.0,79.1 135.0,146.5 195.0,127.0 255.0,118.4 315.0,120.9 375.0,136.0 435.0,165.2 495.0,206.4 555.0,250.7 615.0,275.6 675.0,258.4 735.0,217.6" fill="none" stroke="#2e8b57" stroke-width="2"/><text x="640" y="87" fill="#2e8b57" font-family="sans-serif" font-size="12">serviço 3</text>
+<polyline points="75.0,107.5 135.0,135.3 195.0,125.8 255.0,124.5 315.0,132.9 375.0,154.2 435.0,189.3 495.0,232.7 555.0,266.0 615.0,261.5 675.0,225.2 735.0,185.1" fill="none" stroke="#9b59b6" stroke-width="2"/><text x="640" y="103" fill="#9b59b6" font-family="sans-serif" font-size="12">serviço 4</text>
+</svg>
