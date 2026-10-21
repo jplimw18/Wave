@@ -1,4 +1,4 @@
-"""Offline candidate only: no OTLP decoding, collection, efficiency or correlation claims."""
+"""Candidata para análise local; não decodifica OTLP, coleta dados ou comprova eficiência/correlação."""
 from __future__ import annotations
 import argparse
 import hashlib
@@ -10,7 +10,7 @@ MODEL_ID = "pq-goodput-latency-error-v1"
 
 
 def evaluate(observation, reference):
-    """Return JSON-compatible derived values and explicit invalid/missing states."""
+    """Retorna valores derivados compatíveis com JSON e estados explícitos de invalidez/ausência."""
     result = dict(model_id=MODEL_ID, status="invalid", reason=None,
                   P=None, Q=None, S=None, D=None, theta=None,
                   z_latency=None, z_error=None)
@@ -88,8 +88,8 @@ def main():
                   historical_original_source="evidence/real-windows.json",
                   historical_sha256=hashlib.sha256(historical_bytes).hexdigest(),
                   historical_date_documented="2026-10-12",
-                  date_provenance="STATUS.md; source JSON contains monotonic clocks, not UTC timestamps",
-                  reset_provenance="Historical resets not independently audited here; nonnegative deltas assumed valid",
+                  date_provenance="STATUS.md; o JSON de origem contém relógios monotônicos, sem timestamps UTC",
+                  reset_provenance="Reinícios históricos dos contadores não auditados independentemente aqui; deltas não negativos considerados válidos",
                   new_cluster_collection=False, records=records)
     args.out.mkdir(parents=True, exist_ok=True)
     path = args.out / "candidate_results.json"

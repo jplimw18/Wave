@@ -14,7 +14,7 @@ P não é limitado a 1. Não multiplicar novamente por (1-e), pois os sucessos j
 
     P_quality = P * Lref/max(L,Lref),
 
-onde L é uma estatística de latência declarada (primeiro a média, disponível no histórico). P_quality e P são modelos diferentes; não alternar conforme o resultado. Se a utilidade significa cumprir um prazo, uma medição direta de sucessos dentro do prazo é preferível, mas exige histograma conjunto de status e latência ou registros por requisição. O histograma atual não tem label de status e não permite obter exatamente essa interseção.
+onde L é uma estatística de latência declarada (primeiro a média, disponível no histórico). P_quality e P são modelos diferentes; não alternar conforme o resultado. Se a utilidade significa cumprir um prazo, uma medição direta de sucessos dentro do prazo é preferível, mas exige histograma conjunto de estado e latência ou registros por requisição. O histograma atual não tem rótulo de estado e não permite obter exatamente essa interseção.
 
 Construir um vetor de atritos não negativos z e pesos a_k≥0, soma a_k=1, fixados no treino:
 

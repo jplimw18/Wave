@@ -5,8 +5,8 @@
   "historical_original_source": "evidence/real-windows.json",
   "historical_sha256": "1312f0dee386181c8f597daf3fccba4abecdb407e50055b40fdc6edc4667f0ce",
   "historical_date_documented": "2026-10-12",
-  "date_provenance": "STATUS.md; source JSON contains monotonic clocks, not UTC timestamps",
-  "reset_provenance": "Historical resets not independently audited here; nonnegative deltas assumed valid",
+  "date_provenance": "STATUS.md; o JSON de origem contém relógios monotônicos, sem timestamps UTC",
+  "reset_provenance": "Reinícios históricos dos contadores não auditados independentemente aqui; deltas não negativos considerados válidos",
   "new_cluster_collection": false,
   "records": [
     {

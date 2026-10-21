@@ -34,7 +34,7 @@ class HarmonicLabTests(unittest.TestCase):
         with self.assertRaises(ValueError): reconstruct([0, np.nan], 1, 1, 1)
 
     def test_rank_deficient_fit_and_nonuniform_recovery(self):
-        # Repeated phase samples produce identical design rows and rank one.
+        # Amostras na mesma fase produzem linhas idênticas na matriz de ajuste e posto um.
         t = np.zeros(5)
         rank_fit = coefficients(np.ones(5)*2, 1, t)
         self.assertEqual(rank_fit[4], 1)

@@ -1,4 +1,4 @@
-"""Small synthetic lab for two-coefficient harmonic models and tensor compression."""
+"""Laboratório sintético de curvas com dois coeficientes e compressão de tensores."""
 from __future__ import annotations
 
 import argparse
@@ -9,15 +9,15 @@ import numpy as np
 
 
 def coefficients(signal, omega: float, times=None):
-    """Fit y=P sin(omega*t)+Q cos(omega*t); return P,Q,S,theta,rank."""
+    """Ajusta y=P sin(omega*t)+Q cos(omega*t); retorna P,Q,S,theta e o posto."""
     y = np.asarray(signal, dtype=float)
     if y.ndim != 1 or y.size == 0 or not np.all(np.isfinite(y)):
-        raise ValueError("signal must be a finite 1-D array")
+        raise ValueError("signal deve ser um vetor não vazio com valores finitos")
     if not np.isfinite(omega) or omega <= 0:
-        raise ValueError("omega must be finite and positive")
+        raise ValueError("omega deve ser finito e positivo")
     t = np.arange(y.size, dtype=float) if times is None else np.asarray(times, dtype=float)
     if t.shape != y.shape or not np.all(np.isfinite(t)):
-        raise ValueError("times must be finite and match signal")
+        raise ValueError("times deve conter valores finitos e ter a mesma forma de signal")
     design = np.column_stack((np.sin(omega*t), np.cos(omega*t)))
     pq, _, rank, _ = np.linalg.lstsq(design, y, rcond=None)
     p, q = map(float, pq)
@@ -28,7 +28,7 @@ def coefficients(signal, omega: float, times=None):
 
 def rotation(theta):
     if not np.isfinite(theta):
-        raise ValueError("theta must be finite")
+        raise ValueError("theta deve ser finito")
     c, s = np.cos(theta), np.sin(theta)
     return np.array([[c, -s], [s, c]])
 
@@ -37,12 +37,12 @@ def reconstruct(times, omega, p, q):
     vals = np.asarray([omega, p, q], dtype=float)
     t = np.asarray(times, dtype=float)
     if not np.all(np.isfinite(vals)) or omega <= 0 or not np.all(np.isfinite(t)):
-        raise ValueError("finite inputs and omega > 0 required")
+        raise ValueError("as entradas devem ser finitas e omega > 0")
     return p*np.sin(omega*t) + q*np.cos(omega*t)
 
 
 def distance(p, q):
-    """Distance to normalized reference (1, 0); missing or invalid pair is undefined."""
+    """Distância à referência normalizada (1, 0); par ausente ou inválido é indefinido."""
     if p is None or q is None:
         return None
     try:
@@ -57,10 +57,10 @@ def distance(p, q):
 
 
 def hosvd(tensor, ranks=None):
-    """HOSVD; ranks are optional truncation dimensions for each tensor mode."""
+    """HOSVD; ranks define, opcionalmente, a dimensão truncada de cada modo do tensor."""
     x = np.asarray(tensor, dtype=float)
     if x.ndim < 2 or any(size == 0 for size in x.shape) or not np.all(np.isfinite(x)):
-        raise ValueError("tensor must be finite, nonempty, and have at least two modes")
+        raise ValueError("o tensor deve ter valores finitos, ser não vazio e ter pelo menos dois modos")
     factors = []
     for mode in range(x.ndim):
         unfolding = np.moveaxis(x, mode, 0).reshape(x.shape[mode], -1)
@@ -71,7 +71,7 @@ def hosvd(tensor, ranks=None):
     else:
         if (len(ranks) != x.ndim or any(not isinstance(r, (int, np.integer)) or isinstance(r, (bool, np.bool_))
                                       or r < 1 or r > x.shape[i] for i, r in enumerate(ranks))):
-            raise ValueError("each truncation rank must be within its mode size")
+            raise ValueError("cada posto de truncagem deve ser inteiro entre 1 e o tamanho do modo")
         used = [u[:, :r] for u, r in zip(factors, ranks)]
     core = x
     for mode, u in enumerate(used):
@@ -92,7 +92,7 @@ def run_demo(out_dir: Path):
     y = reconstruct(t, omega, p, q)
     fitted = coefficients(y, omega, t)
 
-    # Synthetic operational tensor: service x [P,Q,D] x time window.
+    # Tensor operacional sintético: serviço x [P,Q,D] x janela temporal.
     windows = np.arange(12, dtype=float)
     tensor = np.empty((4, 3, len(windows)))
     for i in range(4):
@@ -103,7 +103,7 @@ def run_demo(out_dir: Path):
         tensor[i, 0, :] = ps
         tensor[i, 1, :] = qs
         tensor[i, 2, :] = ds
-    assert np.all(tensor >= 0), "operational synthetic indices must be nonnegative"
+    assert np.all(tensor >= 0), "os índices operacionais sintéticos devem ser não negativos"
     with (out_dir / "synthetic_windows.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["source_kind", "service", "window_time", "P", "Q", "D", "delta_D", "delta_D_per_time"])
@@ -112,7 +112,7 @@ def run_demo(out_dir: Path):
                 delta = "" if j == 0 else tensor[service,2,j]-tensor[service,2,j-1]
                 velocity = "" if j == 0 else delta/(instant-windows[j-1])
                 writer.writerow(["SINTETICO", service+1, instant, *tensor[service,:,j], delta, velocity])
-    matrix = tensor[0, :, :].T  # rows: windows; columns: P,Q,D for service 0
+    matrix = tensor[0, :, :].T  # Linhas: janelas; colunas: P,Q,D do serviço de índice 0.
     u, singular, vh = np.linalg.svd(matrix, full_matrices=False)
     matrix_rank = int(np.linalg.matrix_rank(matrix))
     matrix_rank2_error = float(np.linalg.norm(matrix - u[:, :2] @ np.diag(singular[:2]) @ vh[:2, :]))
@@ -121,7 +121,7 @@ def run_demo(out_dir: Path):
     full_error = float(np.linalg.norm(full-tensor))
     trunc_error = float(np.linalg.norm(truncated-tensor))
     tensor_norm = float(np.linalg.norm(tensor))
-    # Projection from three metrics to two coefficients has a null direction.
+    # A projeção de três métricas em dois coeficientes tem uma direção nula.
     projection = np.array([[1.,0.], [0.,1.], [1.,1.]])
     null_direction = np.array([1.,1.,-1.])
     assert np.allclose(null_direction @ projection, 0)
@@ -149,7 +149,7 @@ def run_demo(out_dir: Path):
     try:
         import matplotlib.pyplot as plt
     except ImportError:
-        # Keep the demo useful with only Python's standard library.
+        # Gera os gráficos com a biblioteca padrão quando Matplotlib está ausente.
         import html
         def svg_plot(filename, title, series, x_label, y_label):
             width, height, left, right, top, bottom = 760, 420, 72, 24, 52, 55
@@ -189,11 +189,11 @@ def run_demo(out_dir: Path):
                 parts.append(f'<text x="{width-right-110}" y="{top+18*idx}" font-family="sans-serif" font-size="12" fill="{colors[idx%len(colors)]}">{html.escape(label)}</text>')
             parts.append('</svg>')
             (out_dir / filename).write_text("\n".join(parts), encoding="utf-8")
-        # Parametric P-Q path with directional arrows, time ordering, and the reference.
+        # Trajetória P-Q com setas de direção, ordem temporal e referência marcada.
         pq = tensor[0, :2, :].T
         xmin, xmax = min(0.8, float(pq[:,0].min())), max(1.8, float(pq[:,0].max()))
         ymin, ymax = min(-0.1, float(pq[:,1].min())), max(1.0, float(pq[:,1].max()))
-        # A square plotting box and equal numeric spans preserve equal px/unit.
+        # Área quadrada e intervalos numéricos iguais preservam a escala em pixels/unidade.
         span = max(xmax-xmin, ymax-ymin)
         xmid, ymid = (xmin+xmax)/2, (ymin+ymax)/2
         xmin, xmax = xmid-span/2, xmid+span/2
@@ -224,8 +224,8 @@ def run_demo(out_dir: Path):
         svg_plot("synthetic_harmonic.svg", "SINTÉTICO — reconstrução harmônica", [("y(t)", y, t)], "tempo t", "amplitude y")
         svg_plot("synthetic_distance.svg", "SINTÉTICO — distância D ao ponto (1,0)", [(f"serviço {i+1}", tensor[i,2,:], windows) for i in range(4)], "janela temporal", "D = hypot(P−1,Q)")
         svg_plot("synthetic_svd.svg", "SINTÉTICO — serviço 1: janela × [P,Q,D]", [("singulares", singular, np.arange(1,len(singular)+1))], "índice singular", "valor singular")
-        svg_plot("synthetic_hosvd.svg", "SINTÉTICO — erros HOSVD", [("full", [full_error], [1]), ("truncado", [trunc_error], [2])], "aproximação (1=full, 2=truncado)", "erro Frobenius")
-        print("matplotlib indisponível; plots SVG sintéticos gerados via biblioteca padrão")
+        svg_plot("synthetic_hosvd.svg", "SINTÉTICO — erros HOSVD", [("completa", [full_error], [1]), ("truncada", [trunc_error], [2])], "aproximação (1=completa, 2=truncada)", "erro de Frobenius")
+        print("Matplotlib indisponível; gráficos SVG sintéticos gerados pela biblioteca padrão")
     else:
         fig, ax = plt.subplots()
         ax.plot(tensor[0,0,:], tensor[0,1,:], "o-", label="serviço sintético 1 (ordem temporal)")
@@ -247,10 +247,10 @@ def run_demo(out_dir: Path):
         ax.set(xlabel="índice singular", ylabel="valor singular", title="SINTÉTICO — serviço 1: janelas × [P,Q,D]")
         fig.tight_layout(); fig.savefig(out_dir / "synthetic_svd.png"); plt.close(fig)
         fig, ax = plt.subplots()
-        ax.bar(["full", "truncado"], [full_error, trunc_error])
-        ax.set(ylabel="erro Frobenius", title="SINTÉTICO — HOSVD")
+        ax.bar(["completa", "truncada"], [full_error, trunc_error])
+        ax.set(ylabel="erro de Frobenius", title="SINTÉTICO — HOSVD")
         fig.tight_layout(); fig.savefig(out_dir / "synthetic_hosvd.png"); plt.close(fig)
-        print("plots sintéticos gerados")
+        print("gráficos sintéticos gerados")
     print(f"CSV sintético: {out_dir / 'synthetic_summary.csv'}")
 
 

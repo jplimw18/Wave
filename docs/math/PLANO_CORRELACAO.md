@@ -6,7 +6,7 @@ Estado desta entrega: inspeção de arquivos e experimentos matemáticos locais.
 
 | Fonte verificada nos arquivos | Uso possível | Limite que deve acompanhar a análise |
 |---|---|---|
-| `aim_http_requests_total{service,route,status}` | Concluídas, falhas e goodput por janela | Definir `/work` ou outra população explícita; health/metrics não são carga útil |
+| `aim_http_requests_total{service,route,status}` | Concluídas, falhas e vazão útil por janela | Definir `/work` ou outra população explícita; health/metrics não são carga útil |
 | `aim_http_request_duration_seconds_{sum,count,bucket}` | Média e histograma de duração por serviço/rota | O timer termina antes da escrita da resposta; não é latência completa medida pelo cliente |
 | `aim_db_operations_total{service}` | Operações bem-sucedidas do cliente de banco | Não somar com requisições HTTP como se fossem trabalhos independentes |
 | `process_cpu_seconds_total` | CPU do processo instrumentado | Não representa todo o cgroup/pod, nem CPU do PostgreSQL |
@@ -15,11 +15,11 @@ Estado desta entrega: inspeção de arquivos e experimentos matemáticos locais.
 
 Antes de cada rodada registrar endpoints/séries disponíveis, permissões de leitura, identidade de pod/container/imagem e versão do manifesto. Leitura de README não substitui `docker version`, estado do perfil minikube e pods Ready. Executar esses checks na frente operacional e anexar a evidência ao run_id.
 
-A coleta histórica `scripts/collect-window.py` soma todas as rotas instrumentadas e usa dois snapshots. Ela não registra relógio civil por janela, reset flags ou distinção entre ausência da série e zero na soma. É adequada como evidência histórica limitada; uma coleta longitudinal deve corrigir essas limitações. Os contadores são atualizados em momentos próximos, mas não numa transação de scrape: avaliar inconsistências de contagem em fronteiras e tolerâncias justificadas, sem truncar diferenças silenciosamente.
+A coleta histórica `scripts/collect-window.py` soma todas as rotas instrumentadas e usa duas capturas instantâneas. Ela não registra relógio civil por janela, indicadores de reinício dos contadores ou distinção entre ausência da série e zero na soma. É adequada como evidência histórica limitada; uma coleta longitudinal deve corrigir essas limitações. Os contadores são atualizados em momentos próximos, mas não numa transação única de coleta: avaliar inconsistências de contagem em fronteiras e tolerâncias justificadas, sem truncar diferenças silenciosamente.
 
 ## 2. Registro canônico
 
-Salvar uma linha por serviço, réplica e janela antes de agregar. Campos mínimos: `run_id`, `source_kind` (real ou synthetic), `service`, `service_type`, `route_scope`, `pod_uid`, `container_id`, `start_utc`, `end_utc`, `duration_seconds`, `restart_count_before/after`, contadores/histogramas before/after, unidade, escopo da CPU, requests/limits, offered_rate, concorrência, tamanho de payload, versão e flags de ausência/reset.
+Salvar uma linha por serviço, réplica e janela antes de agregar. Campos mínimos: `run_id`, `source_kind` (real ou `synthetic`, para sintético), `service`, `service_type`, `route_scope`, `pod_uid`, `container_id`, `start_utc`, `end_utc`, `duration_seconds`, `restart_count_before/after`, contadores/histogramas antes/depois, unidade, escopo da CPU, recursos solicitados e limites (`requests/limits`), taxa oferecida (`offered_rate`), concorrência, tamanho do conteúdo da requisição, versão e indicadores de ausência/reinício dos contadores.
 
 Salvar separadamente `model_id`, Tref/Lref/eref, pesos, política sem tráfego, política de resets, versão de extração, conjunto usado para calibração e hash da entrada. Registrar P, cada z_k, Q, S, D, theta, razões e flags, mantendo brutos. D é a distância euclidiana à referência fixa (1,0). Organizar linhas temporais [P,Q,D] e tensor serviço×(P,Q,D)×tempo; preservar também matrizes/tensores de métricas brutas. Candidatas diferentes são colunas/modelos diferentes. Escalas e pesos não podem ser modificados após observar o teste para melhorar correlações.
 
@@ -65,7 +65,7 @@ Artefatos esperados: inventário da infraestrutura; dados e referências imutáv
 
 ## 7. O que as evidências históricas permitem agora
 
-`evidence/real-windows.json` contém uma janela por API, documentada como coletada em 12/10/2026 no STATUS. O JSON contém instantes monotônicos, não timestamps UTC; a data vem da documentação histórica. As durações são aproximadamente 10 s. As aplicações são workloads sintéticos, embora os contadores sejam medições reais do laboratório.
+`evidence/real-windows.json` contém uma janela por API, documentada como coletada em 12/10/2026 no STATUS. O JSON contém instantes monotônicos, não registros de tempo UTC; a data vem da documentação histórica. As durações são aproximadamente 10 s. As aplicações executam cargas sintéticas, embora os contadores sejam medições reais do laboratório.
 
 Com Tref=100/s e Lref=0,1 s (referências artificiais anteriores), ambas têm erro zero e média abaixo de Lref. Portanto, para a candidata de dois atritos deste documento, Q=0, P é aproximadamente 0,247921 para api-a e 0,245946 para api-b, S=P, theta=0, e D=1−P (aproximadamente 0,752079 e 0,754054). Isso mostra o comportamento da definição; não significa ausência de custo, fila, cauda de latência ou atritos não instrumentados. Nenhuma escolha de eref>0 altera esses dois Q porque e=0. Como há somente uma janela por serviço, não há ΔD temporal real disponível.
 
