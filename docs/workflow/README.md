@@ -14,7 +14,7 @@ Cada entrega tem uma issue, adicionada ao Project em Triagem. A progressão é T
 3. Promover conjuntos revisados por PR dev → homl. Registrar execução no Minikube, versões, entradas, saídas e documentação.
 4. Após aceite explícito, abrir PR homl → main. main representa o estado íntegro aceito. Não promover nem mesclar automaticamente.
 
-O repositório estava vazio. O bootstrap criou somente README mínimo na main e originou homl/dev no mesmo commit; toda implementação subsequente deve seguir o fluxo acima. Nenhuma regra de proteção foi presumida ou ativada; este documento define o processo, não fiscalização automática.
+O repositório estava vazio. O bootstrap criou somente README mínimo na main e originou homl/dev no mesmo commit; toda implementação subsequente deve seguir o fluxo acima. main, homl e dev exigem PR, inclusive para administradores. Force push e exclusão estão bloqueados. Não há checks obrigatórios nem número mínimo de aprovações: os gates de testes, aceite e direção das promoções continuam sendo exigências deste processo, ainda sem automação.
 
 ## Validação iterativa
 
