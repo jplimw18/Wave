@@ -1,0 +1,11 @@
+{
+ "model_id":"activity-q-v1",
+ "S0":1.0,"throughput_reference_per_second":40.0,"latency_reference_seconds":0.1,"k_per_second":5.0,
+ "lambda_effective":"(received_delta + active_start + queued_start)/duration_seconds",
+ "V":"lambda_effective/(lambda_effective+k)",
+ "Qv":"V*sqrt(S0^2-P^2)","Sv":"hypot(P,Qv)",
+ "references_fixed_before_collection":true,
+ "queue_scope":"no_application_job_queue_by_architecture; TCP backlog not observed",
+ "idle_scope":"available application handler with valid scrapes, no received/active/application-queued work",
+ "zero_completed_policy":"P=0 with latency and quality absent, not fabricated"
+}

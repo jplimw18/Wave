@@ -1,0 +1,5 @@
+NAME             IMAGE
+api-a            aim-api:lab-v1
+api-b            aim-api:lab-v1
+otel-collector   otel/opentelemetry-collector-contrib:0.147.0
+postgres         postgres:17.4
