@@ -1,0 +1,4 @@
+[workspace]
+members = ["otlp-ingest", "extractor-core", "wave-extractor"]
+resolver = "2"
+
