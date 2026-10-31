@@ -1,0 +1,8 @@
+{
+  "source_kind": "synthetic",
+  "scenarios": 505,
+  "max_pythagorean_absolute_error": 4.440892098500626e-16,
+  "construction": "S input; P=alpha*S; Q=sqrt(S-P)*sqrt(S+P)",
+  "domain": "0<=P<=S<=1; 0<=alpha<=1",
+  "carrier_cycles": 1
+}
