@@ -1,0 +1,54 @@
+[
+  {
+    "service": "api-a",
+    "before": {
+      "at": 1278.70334397,
+      "cpu": 1.0,
+      "requests": 20.0,
+      "errors": 0,
+      "latency_sum": 0.39405321100002766,
+      "latency_count": 20.0
+    },
+    "after": {
+      "at": 1288.746867543,
+      "cpu": 3.2199999999999998,
+      "requests": 269.0,
+      "errors": 0,
+      "latency_sum": 4.711428223000439,
+      "latency_count": 269.0
+    },
+    "duration_seconds": 10.043523572999902,
+    "cpu_reference_cores": 1,
+    "cpu_reference_description": "one process CPU core; not maximum capacity",
+    "cpu_percent": 22.10379638046598,
+    "total_requests": 249,
+    "failed_requests": 0,
+    "latency_seconds": 0.017338855469881172
+  },
+  {
+    "service": "api-b",
+    "before": {
+      "at": 1278.626555074,
+      "cpu": 0.8999999999999999,
+      "requests": 20.0,
+      "errors": 0,
+      "latency_sum": 0.34614187100009985,
+      "latency_count": 20.0
+    },
+    "after": {
+      "at": 1288.710060797,
+      "cpu": 3.0900000000000003,
+      "requests": 268.0,
+      "errors": 0,
+      "latency_sum": 4.698275257998603,
+      "latency_count": 268.0
+    },
+    "duration_seconds": 10.083505723000144,
+    "cpu_reference_cores": 1,
+    "cpu_reference_description": "one process CPU core; not maximum capacity",
+    "cpu_percent": 21.718636951875602,
+    "total_requests": 248,
+    "failed_requests": 0,
+    "latency_seconds": 0.01754892494757461
+  }
+]

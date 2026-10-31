@@ -1,0 +1,12 @@
+[package]
+name = "wave-otlp-ingest"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+opentelemetry-proto = { version = "=0.32.0", default-features = false, features = ["gen-tonic", "metrics"] }
+prost = "0.14"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "signal", "fs", "io-util", "sync"] }
+tokio-stream = { version = "0.1", features = ["net"] }
+tonic = { version = "0.14", features = ["transport"] }
+
