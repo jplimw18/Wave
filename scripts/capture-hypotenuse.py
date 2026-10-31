@@ -52,7 +52,9 @@ def measure(service, window, rate, fraction):
     attempted=0; statuses={}; transport_failures=0
     # Marcador determinístico: todo décimo/quinto pedido usa rota inexistente.
     every = None if fraction == 0 else round(1/fraction)
-    while time.perf_counter() < deadline:
+    if rate == 0:
+        time.sleep(SECONDS)
+    while rate > 0 and time.perf_counter() < deadline:
         scheduled=begin+attempted/rate
         delay=scheduled-time.perf_counter()
         if delay>0:

@@ -1,0 +1,21 @@
+{
+  "windows": 20,
+  "idle_windows": 4,
+  "received": 1310.0,
+  "completed": 1310,
+  "failed": 102,
+  "transport_failures": 0,
+  "pod_restarts_during_capture": 0,
+  "start_utc": "2026-10-31T03:33:02.171482+00:00",
+  "end_utc": "2026-10-31T03:33:52.425361+00:00",
+  "checks": [
+    "cliente e deltas entradas/conclusoes coincidem",
+    "quatro janelas sem entradas nem atividade no handler",
+    "availability e scrapes validos nos limites",
+    "Collector expoe novas metricas de atividade"
+  ],
+  "limitations": [
+    "fila de negocio zero por arquitetura, nao observacao TCP",
+    "bloqueio sem entradas nao injetado nesta coleta"
+  ]
+}

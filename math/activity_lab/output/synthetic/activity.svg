@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="565" viewBox="0 0 940 565">
+<rect width="100%" height="100%" fill="white"/>
+<text x="470.0" y="25" text-anchor="middle" font-family="sans-serif" font-size="17">Índices de atividade por janela</text>
+<text x="470.0" y="44" text-anchor="middle" font-family="sans-serif" font-size="10">SINTÉTICO</text>
+<text x="78" y="56" font-family="sans-serif" font-size="13">Serviço: api-a</text>
+<path d="M78 65 V215 H908" fill="none" stroke="#444"/>
+<path d="M78.0 65 V215" stroke="#eee"/>
+<text x="78.0" y="231" text-anchor="middle" font-family="sans-serif" font-size="10">0</text>
+<path d="M78 215.0 H908" stroke="#eee"/>
+<text x="71" y="219.0" text-anchor="end" font-family="sans-serif" font-size="10">0</text>
+<path d="M285.5 65 V215" stroke="#eee"/>
+<text x="285.5" y="231" text-anchor="middle" font-family="sans-serif" font-size="10">2.25</text>
+<path d="M78 177.5 H908" stroke="#eee"/>
+<text x="71" y="181.5" text-anchor="end" font-family="sans-serif" font-size="10">0.27</text>
+<path d="M493.0 65 V215" stroke="#eee"/>
+<text x="493.0" y="231" text-anchor="middle" font-family="sans-serif" font-size="10">4.5</text>
+<path d="M78 140.0 H908" stroke="#eee"/>
+<text x="71" y="144.0" text-anchor="end" font-family="sans-serif" font-size="10">0.54</text>
+<path d="M700.5 65 V215" stroke="#eee"/>
+<text x="700.5" y="231" text-anchor="middle" font-family="sans-serif" font-size="10">6.75</text>
+<path d="M78 102.5 H908" stroke="#eee"/>
+<text x="71" y="106.5" text-anchor="end" font-family="sans-serif" font-size="10">0.81</text>
+<path d="M908.0 65 V215" stroke="#eee"/>
+<text x="908.0" y="231" text-anchor="middle" font-family="sans-serif" font-size="10">9</text>
+<path d="M78 65.0 H908" stroke="#eee"/>
+<text x="71" y="69.0" text-anchor="end" font-family="sans-serif" font-size="10">1.08</text>
+<text x="493.0" y="252" text-anchor="middle" font-family="sans-serif" font-size="11">índice da janela</text>
+<text x="12" y="140.0" font-family="sans-serif" font-size="11">valor</text>
+<polyline points="78.00,215.00 170.22,175.32 262.44,129.53 354.67,109.18 446.89,99.26 539.11,93.47 631.33,86.79 723.56,129.53 815.78,175.32 908.00,209.66" fill="none" stroke="#1769aa" stroke-width="2"/>
+<polyline points="78.00,76.11 170.22,76.28 262.44,78.92 354.67,87.71 446.89,106.58 539.11,115.81 631.33,215.00 723.56,78.92 815.78,76.28 908.00,76.11" fill="none" stroke="#e67e22" stroke-width="2"/>
+<polyline points="78.00,215.00 170.22,175.37 262.44,131.26 354.67,118.01 446.89,124.65 539.11,128.21 631.33,215.00 723.56,131.26 815.78,175.37 908.00,209.66" fill="none" stroke="#2e8b57" stroke-width="2"/>
+<polyline points="78.00,215.00 170.22,174.76 262.44,126.77 354.67,103.23 446.89,89.71 539.11,84.68 631.33,76.11 723.56,126.77 815.78,174.76 908.00,209.66" fill="none" stroke="#9b59b6" stroke-width="2"/>
+<polyline points="78.00,76.11 170.22,76.11 262.44,76.11 354.67,76.11 446.89,76.11 539.11,76.11 631.33,76.11 723.56,76.11 815.78,76.11 908.00,76.11" fill="none" stroke="#555555" stroke-width="1.5"/>
+<path d="M78 269 h17" stroke="#1769aa" stroke-width="3"/><text x="100" y="273" font-family="sans-serif" font-size="11">V</text>
+<path d="M171 269 h17" stroke="#e67e22" stroke-width="3"/><text x="193" y="273" font-family="sans-serif" font-size="11">Q0</text>
+<path d="M264 269 h17" stroke="#2e8b57" stroke-width="3"/><text x="286" y="273" font-family="sans-serif" font-size="11">Qv</text>
+<path d="M357 269 h17" stroke="#9b59b6" stroke-width="3"/><text x="379" y="273" font-family="sans-serif" font-size="11">Sv</text>
+<path d="M450 269 h17" stroke="#555555" stroke-width="3"/><text x="472" y="273" font-family="sans-serif" font-size="11">S0</text>
+<text x="78" y="301" font-family="sans-serif" font-size="13">Serviço: api-b</text>
+<path d="M78 310 V460 H908" fill="none" stroke="#444"/>
+<path d="M78.0 310 V460" stroke="#eee"/>
+<text x="78.0" y="476" text-anchor="middle" font-family="sans-serif" font-size="10">0</text>
+<path d="M78 460.0 H908" stroke="#eee"/>
+<text x="71" y="464.0" text-anchor="end" font-family="sans-serif" font-size="10">0</text>
+<path d="M285.5 310 V460" stroke="#eee"/>
+<text x="285.5" y="476" text-anchor="middle" font-family="sans-serif" font-size="10">2.25</text>
+<path d="M78 422.5 H908" stroke="#eee"/>
+<text x="71" y="426.5" text-anchor="end" font-family="sans-serif" font-size="10">0.27</text>
+<path d="M493.0 310 V460" stroke="#eee"/>
+<text x="493.0" y="476" text-anchor="middle" font-family="sans-serif" font-size="10">4.5</text>
+<path d="M78 385.0 H908" stroke="#eee"/>
+<text x="71" y="389.0" text-anchor="end" font-family="sans-serif" font-size="10">0.54</text>
+<path d="M700.5 310 V460" stroke="#eee"/>
+<text x="700.5" y="476" text-anchor="middle" font-family="sans-serif" font-size="10">6.75</text>
+<path d="M78 347.5 H908" stroke="#eee"/>
+<text x="71" y="351.5" text-anchor="end" font-family="sans-serif" font-size="10">0.81</text>
+<path d="M908.0 310 V460" stroke="#eee"/>
+<text x="908.0" y="476" text-anchor="middle" font-family="sans-serif" font-size="10">9</text>
+<path d="M78 310.0 H908" stroke="#eee"/>
+<text x="71" y="314.0" text-anchor="end" font-family="sans-serif" font-size="10">1.08</text>
+<text x="493.0" y="497" text-anchor="middle" font-family="sans-serif" font-size="11">índice da janela</text>
+<text x="12" y="385.0" font-family="sans-serif" font-size="11">valor</text>
+<polyline points="78.00,460.00 170.22,420.32 262.44,374.53 354.67,354.18 446.89,344.26 539.11,338.47 631.33,331.79 723.56,374.53 815.78,420.32 908.00,454.66" fill="none" stroke="#1769aa" stroke-width="2"/>
+<polyline points="78.00,321.11 170.22,321.28 262.44,323.92 354.67,332.71 446.89,351.58 539.11,360.81 631.33,460.00 723.56,323.92 815.78,321.28 908.00,321.11" fill="none" stroke="#e67e22" stroke-width="2"/>
+<polyline points="78.00,460.00 170.22,420.37 262.44,376.26 354.67,363.01 446.89,369.65 539.11,373.21 631.33,460.00 723.56,376.26 815.78,420.37 908.00,454.66" fill="none" stroke="#2e8b57" stroke-width="2"/>
+<polyline points="78.00,460.00 170.22,419.76 262.44,371.77 354.67,348.23 446.89,334.71 539.11,329.68 631.33,321.11 723.56,371.77 815.78,419.76 908.00,454.66" fill="none" stroke="#9b59b6" stroke-width="2"/>
+<polyline points="78.00,321.11 170.22,321.11 262.44,321.11 354.67,321.11 446.89,321.11 539.11,321.11 631.33,321.11 723.56,321.11 815.78,321.11 908.00,321.11" fill="none" stroke="#555555" stroke-width="1.5"/>
+<path d="M78 514 h17" stroke="#1769aa" stroke-width="3"/><text x="100" y="518" font-family="sans-serif" font-size="11">V</text>
+<path d="M171 514 h17" stroke="#e67e22" stroke-width="3"/><text x="193" y="518" font-family="sans-serif" font-size="11">Q0</text>
+<path d="M264 514 h17" stroke="#2e8b57" stroke-width="3"/><text x="286" y="518" font-family="sans-serif" font-size="11">Qv</text>
+<path d="M357 514 h17" stroke="#9b59b6" stroke-width="3"/><text x="379" y="518" font-family="sans-serif" font-size="11">Sv</text>
+<path d="M450 514 h17" stroke="#555555" stroke-width="3"/><text x="472" y="518" font-family="sans-serif" font-size="11">S0</text>
+</svg>
