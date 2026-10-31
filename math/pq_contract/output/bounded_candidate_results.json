@@ -1,0 +1,768 @@
+{
+  "model_id": "pq-bounded-radial-unit45-v2",
+  "reference_point": [
+    1,
+    0
+  ],
+  "balanced_point": [
+    0.7071067811865475,
+    0.7071067811865475
+  ],
+  "boundary_radius": 0.7653668647301795,
+  "boundary_atol": 1e-12,
+  "boundary_assumption": "Equilíbrio de 45 graus na circunferência unitária; convenção geométrica, sem validação de eficiência real.",
+  "normalization_policy": "P e componentes z_latency/z_error limitados a [0,1]; Q é a norma ponderada dos componentes limitados, com pesos 0,5/0,5.",
+  "historical_source": "math/pq_contract/fixtures/historical-windows.json",
+  "historical_sha256": "1312f0dee386181c8f597daf3fccba4abecdb407e50055b40fdc6edc4667f0ce",
+  "historical_date_documented": "2026-10-12",
+  "new_cluster_collection": false,
+  "records": [
+    {
+      "id": "reference_point",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 100,
+        "failed": 0,
+        "mean_latency_seconds": 0.1
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "ok",
+        "reason": null,
+        "operational_state": "observado",
+        "P": 1.0,
+        "Q": 0.0,
+        "S": 1.0,
+        "theta": 0.0,
+        "raw_indices": {
+          "P": 1.0,
+          "Q": 0.0,
+          "S": 1.0,
+          "D": 0.0
+        },
+        "normalization": {
+          "P": {
+            "raw": 1.0,
+            "value": 1.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_latency": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_error": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          }
+        },
+        "raw_q_above_one": false,
+        "clipping_applied": false,
+        "D": 0.0,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": -0.7653668647301795,
+        "boundary_status": "dentro",
+        "geometrically_efficient": true
+      }
+    },
+    {
+      "id": "above_throughput_reference",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 200,
+        "failed": 0,
+        "mean_latency_seconds": 0.1
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "ok",
+        "reason": null,
+        "operational_state": "observado",
+        "P": 1.0,
+        "Q": 0.0,
+        "S": 1.0,
+        "theta": 0.0,
+        "raw_indices": {
+          "P": 2.0,
+          "Q": 0.0,
+          "S": 2.0,
+          "D": 1.0
+        },
+        "normalization": {
+          "P": {
+            "raw": 2.0,
+            "value": 1.0,
+            "below_zero": false,
+            "above_one": true,
+            "clipped": true
+          },
+          "z_latency": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_error": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          }
+        },
+        "raw_q_above_one": false,
+        "clipping_applied": true,
+        "D": 0.0,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": -0.7653668647301795,
+        "boundary_status": "dentro",
+        "geometrically_efficient": true
+      }
+    },
+    {
+      "id": "all_failed_with_latency_excess",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 100,
+        "failed": 100,
+        "mean_latency_seconds": 0.3
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "ok",
+        "reason": null,
+        "operational_state": "observado",
+        "P": 0.0,
+        "Q": 1.0,
+        "S": 1.0,
+        "theta": 1.5707963267948966,
+        "raw_indices": {
+          "P": 0.0,
+          "Q": 3.807886552931954,
+          "S": 3.807886552931954,
+          "D": 3.937003937005905
+        },
+        "normalization": {
+          "P": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_latency": {
+            "raw": 1.9999999999999996,
+            "value": 1.0,
+            "below_zero": false,
+            "above_one": true,
+            "clipped": true
+          },
+          "z_error": {
+            "raw": 5.0,
+            "value": 1.0,
+            "below_zero": false,
+            "above_one": true,
+            "clipped": true
+          }
+        },
+        "raw_q_above_one": true,
+        "clipping_applied": true,
+        "D": 1.4142135623730951,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": 0.6488466976429157,
+        "boundary_status": "fora",
+        "geometrically_efficient": false
+      }
+    },
+    {
+      "id": "latency_only_above_reference",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 100,
+        "failed": 0,
+        "mean_latency_seconds": 0.4
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "ok",
+        "reason": null,
+        "operational_state": "observado",
+        "P": 1.0,
+        "Q": 0.7071067811865475,
+        "S": 1.224744871391589,
+        "theta": 0.6154797086703873,
+        "raw_indices": {
+          "P": 1.0,
+          "Q": 2.1213203435596424,
+          "S": 2.3452078799117144,
+          "D": 2.1213203435596424
+        },
+        "normalization": {
+          "P": {
+            "raw": 1.0,
+            "value": 1.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_latency": {
+            "raw": 3.0,
+            "value": 1.0,
+            "below_zero": false,
+            "above_one": true,
+            "clipped": true
+          },
+          "z_error": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          }
+        },
+        "raw_q_above_one": true,
+        "clipping_applied": true,
+        "D": 0.7071067811865475,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": -0.05826008354363199,
+        "boundary_status": "dentro",
+        "geometrically_efficient": true
+      }
+    },
+    {
+      "id": "mixed_error_and_latency",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 100,
+        "failed": 20,
+        "mean_latency_seconds": 0.2
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "ok",
+        "reason": null,
+        "operational_state": "observado",
+        "P": 0.8,
+        "Q": 1.0,
+        "S": 1.2806248474865698,
+        "theta": 0.8960553845713439,
+        "raw_indices": {
+          "P": 0.8,
+          "Q": 1.0,
+          "S": 1.2806248474865698,
+          "D": 1.019803902718557
+        },
+        "normalization": {
+          "P": {
+            "raw": 0.8,
+            "value": 0.8,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_latency": {
+            "raw": 1.0,
+            "value": 1.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_error": {
+            "raw": 1.0,
+            "value": 1.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          }
+        },
+        "raw_q_above_one": false,
+        "clipping_applied": false,
+        "D": 1.019803902718557,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": 0.2544370379883776,
+        "boundary_status": "fora",
+        "geometrically_efficient": false
+      }
+    },
+    {
+      "id": "no_traffic",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 0,
+        "failed": 0,
+        "mean_latency_seconds": null
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "partial",
+        "reason": "no_traffic",
+        "operational_state": "ocioso",
+        "P": 0.0,
+        "Q": null,
+        "S": null,
+        "theta": null,
+        "raw_indices": {
+          "P": 0.0,
+          "Q": null,
+          "S": null,
+          "D": null
+        },
+        "normalization": {
+          "P": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_latency": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          },
+          "z_error": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          }
+        },
+        "raw_q_above_one": null,
+        "clipping_applied": false,
+        "D": null,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": null,
+        "boundary_status": "ausente",
+        "geometrically_efficient": null
+      }
+    },
+    {
+      "id": "missing_counts",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": null,
+        "failed": null,
+        "mean_latency_seconds": null
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "missing",
+        "reason": "missing_counts",
+        "operational_state": "indeterminado",
+        "P": null,
+        "Q": null,
+        "S": null,
+        "theta": null,
+        "raw_indices": {
+          "P": null,
+          "Q": null,
+          "S": null,
+          "D": null
+        },
+        "normalization": {
+          "P": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          },
+          "z_latency": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          },
+          "z_error": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          }
+        },
+        "raw_q_above_one": null,
+        "clipping_applied": false,
+        "D": null,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": null,
+        "boundary_status": "ausente",
+        "geometrically_efficient": null
+      }
+    },
+    {
+      "id": "missing_latency",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": 100,
+        "failed": 0,
+        "mean_latency_seconds": null
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "partial",
+        "reason": "missing_latency",
+        "operational_state": "indeterminado",
+        "P": 1.0,
+        "Q": null,
+        "S": null,
+        "theta": null,
+        "raw_indices": {
+          "P": 1.0,
+          "Q": null,
+          "S": null,
+          "D": null
+        },
+        "normalization": {
+          "P": {
+            "raw": 1.0,
+            "value": 1.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_latency": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          },
+          "z_error": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          }
+        },
+        "raw_q_above_one": null,
+        "clipping_applied": false,
+        "D": null,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": null,
+        "boundary_status": "ausente",
+        "geometrically_efficient": null
+      }
+    },
+    {
+      "id": "invalid_negative_count",
+      "source_kind": "synthetic",
+      "observation": {
+        "duration_seconds": 1,
+        "completed": -1,
+        "failed": 0,
+        "mean_latency_seconds": 0.1
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "invalid",
+        "reason": "invalid_counts",
+        "operational_state": "indeterminado",
+        "P": null,
+        "Q": null,
+        "S": null,
+        "theta": null,
+        "raw_indices": {
+          "P": null,
+          "Q": null,
+          "S": null,
+          "D": null
+        },
+        "normalization": {
+          "P": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          },
+          "z_latency": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          },
+          "z_error": {
+            "raw": null,
+            "value": null,
+            "below_zero": null,
+            "above_one": null,
+            "clipped": null
+          }
+        },
+        "raw_q_above_one": null,
+        "clipping_applied": false,
+        "D": null,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": null,
+        "boundary_status": "ausente",
+        "geometrically_efficient": null
+      }
+    },
+    {
+      "id": "api-a",
+      "source_kind": "historical_real_lab_measurement",
+      "workload_kind": "synthetic_application",
+      "observation": {
+        "duration_seconds": 10.043523572999902,
+        "completed": 249,
+        "failed": 0,
+        "mean_latency_seconds": 0.017338855469881172
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "ok",
+        "reason": null,
+        "operational_state": "observado",
+        "P": 0.24792095940252384,
+        "Q": 0.0,
+        "S": 0.24792095940252384,
+        "theta": 0.0,
+        "raw_indices": {
+          "P": 0.24792095940252384,
+          "Q": 0.0,
+          "S": 0.24792095940252384,
+          "D": 0.7520790405974762
+        },
+        "normalization": {
+          "P": {
+            "raw": 0.24792095940252384,
+            "value": 0.24792095940252384,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_latency": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_error": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          }
+        },
+        "raw_q_above_one": false,
+        "clipping_applied": false,
+        "D": 0.7520790405974762,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": -0.013287824132703241,
+        "boundary_status": "dentro",
+        "geometrically_efficient": true
+      }
+    },
+    {
+      "id": "api-b",
+      "source_kind": "historical_real_lab_measurement",
+      "workload_kind": "synthetic_application",
+      "observation": {
+        "duration_seconds": 10.083505723000144,
+        "completed": 248,
+        "failed": 0,
+        "mean_latency_seconds": 0.01754892494757461
+      },
+      "reference": {
+        "throughput_per_second": 100.0,
+        "latency_seconds": 0.1,
+        "error_fraction": 0.2
+      },
+      "derived": {
+        "model_id": "pq-bounded-radial-unit45-v2",
+        "status": "ok",
+        "reason": null,
+        "operational_state": "observado",
+        "P": 0.2459462084048013,
+        "Q": 0.0,
+        "S": 0.2459462084048013,
+        "theta": 0.0,
+        "raw_indices": {
+          "P": 0.2459462084048013,
+          "Q": 0.0,
+          "S": 0.2459462084048013,
+          "D": 0.7540537915951987
+        },
+        "normalization": {
+          "P": {
+            "raw": 0.2459462084048013,
+            "value": 0.2459462084048013,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_latency": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          },
+          "z_error": {
+            "raw": 0.0,
+            "value": 0.0,
+            "below_zero": false,
+            "above_one": false,
+            "clipped": false
+          }
+        },
+        "raw_q_above_one": false,
+        "clipping_applied": false,
+        "D": 0.7540537915951987,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": -0.011313073134980756,
+        "boundary_status": "dentro",
+        "geometrically_efficient": true
+      }
+    }
+  ],
+  "geometry": [
+    {
+      "id": "ideal",
+      "P": 1.0,
+      "Q": 0.0,
+      "derived": {
+        "D": 0.0,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": -0.7653668647301795,
+        "boundary_status": "dentro",
+        "geometrically_efficient": true
+      }
+    },
+    {
+      "id": "balanced_unit45",
+      "P": 0.7071067811865475,
+      "Q": 0.7071067811865475,
+      "derived": {
+        "D": 0.7653668647301796,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": 1.1102230246251565e-16,
+        "boundary_status": "fronteira",
+        "geometrically_efficient": true
+      }
+    },
+    {
+      "id": "geometric_rest",
+      "P": 0.0,
+      "Q": 0.0,
+      "derived": {
+        "D": 1.0,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": 0.23463313526982055,
+        "boundary_status": "fora",
+        "geometrically_efficient": false
+      }
+    },
+    {
+      "id": "corner_one_one",
+      "P": 1.0,
+      "Q": 1.0,
+      "derived": {
+        "D": 1.0,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": 0.23463313526982055,
+        "boundary_status": "fora",
+        "geometrically_efficient": false
+      }
+    },
+    {
+      "id": "small_equal_pair",
+      "P": 0.1,
+      "Q": 0.1,
+      "derived": {
+        "D": 0.9055385138137417,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": 0.14017164908356228,
+        "boundary_status": "fora",
+        "geometrically_efficient": false
+      }
+    },
+    {
+      "id": "missing",
+      "P": null,
+      "Q": null,
+      "derived": {
+        "D": null,
+        "boundary_radius": 0.7653668647301795,
+        "boundary_delta": null,
+        "boundary_status": "ausente",
+        "geometrically_efficient": null
+      }
+    }
+  ]
+}

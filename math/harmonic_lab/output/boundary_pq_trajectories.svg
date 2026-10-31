@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="620" viewBox="0 0 620 620">
+<defs><clipPath id="square"><rect x="95" y="70" width="460" height="460"/></clipPath>
+<marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#444"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<text x="310" y="30" text-anchor="middle" font-family="sans-serif" font-size="17">SINTÉTICO — trajetórias no plano P,Q</text>
+<rect x="95" y="70" width="460" height="460" fill="none" stroke="#333"/>
+<text x="315" y="595" text-anchor="middle" font-family="sans-serif">P normalizado [0,1]</text>
+<text x="28" y="300" text-anchor="middle" transform="rotate(-90,28,300)" font-family="sans-serif">Q normalizado [0,1]</text>
+<g clip-path="url(#square)">
+<circle cx="555" cy="530" r="352.07" fill="#e6f3e9" stroke="#d33" stroke-width="2" stroke-dasharray="7 5"/>
+<path d="M555.0,530.0 L480.7,265.5" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M480.7,265.5 L428.5,216.7" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M428.5,216.7 L357.2,198.8" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M357.2,198.8 L285.9,216.7" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M285.9,216.7 L233.7,265.5" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M233.7,265.5 L214.6,332.2" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M214.6,332.2 L233.7,398.9" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M233.7,398.9 L285.9,447.7" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M285.9,447.7 L357.2,465.6" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M357.2,465.6 L428.5,447.7" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M428.5,447.7 L480.7,398.9" fill="none" stroke="#1769aa" stroke-width="2" marker-end="url(#arrow)"/>
+<circle cx="555.0" cy="530.0" r="3" fill="#1769aa"/><title>serviço 1, janela 0</title>
+<circle cx="480.7" cy="265.5" r="3" fill="#1769aa"/><title>serviço 1, janela 1</title>
+<circle cx="428.5" cy="216.7" r="3" fill="#1769aa"/><title>serviço 1, janela 2</title>
+<circle cx="357.2" cy="198.8" r="3" fill="#1769aa"/><title>serviço 1, janela 3</title>
+<circle cx="285.9" cy="216.7" r="3" fill="#1769aa"/><title>serviço 1, janela 4</title>
+<circle cx="233.7" cy="265.5" r="3" fill="#1769aa"/><title>serviço 1, janela 5</title>
+<circle cx="214.6" cy="332.2" r="3" fill="#1769aa"/><title>serviço 1, janela 6</title>
+<circle cx="233.7" cy="398.9" r="3" fill="#1769aa"/><title>serviço 1, janela 7</title>
+<circle cx="285.9" cy="447.7" r="3" fill="#1769aa"/><title>serviço 1, janela 8</title>
+<circle cx="357.2" cy="465.6" r="3" fill="#1769aa"/><title>serviço 1, janela 9</title>
+<circle cx="428.5" cy="447.7" r="3" fill="#1769aa"/><title>serviço 1, janela 10</title>
+<circle cx="480.7" cy="398.9" r="3" fill="#1769aa"/><title>serviço 1, janela 11</title>
+<path d="M420.3,204.7 L453.1,223.4" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M453.1,223.4 L387.4,199.4" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M387.4,199.4 L313.7,210.9" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M313.7,210.9 L251.6,255.0" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M251.6,255.0 L217.8,319.7" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M217.8,319.7 L221.4,387.8" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M221.4,387.8 L261.3,441.0" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M261.3,441.0 L327.0,465.0" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M327.0,465.0 L400.7,453.5" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M400.7,453.5 L462.8,409.4" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M462.8,409.4 L496.6,344.7" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#arrow)"/>
+<circle cx="420.3" cy="204.7" r="3" fill="#e67e22"/><title>serviço 2, janela 0</title>
+<circle cx="453.1" cy="223.4" r="3" fill="#e67e22"/><title>serviço 2, janela 1</title>
+<circle cx="387.4" cy="199.4" r="3" fill="#e67e22"/><title>serviço 2, janela 2</title>
+<circle cx="313.7" cy="210.9" r="3" fill="#e67e22"/><title>serviço 2, janela 3</title>
+<circle cx="251.6" cy="255.0" r="3" fill="#e67e22"/><title>serviço 2, janela 4</title>
+<circle cx="217.8" cy="319.7" r="3" fill="#e67e22"/><title>serviço 2, janela 5</title>
+<circle cx="221.4" cy="387.8" r="3" fill="#e67e22"/><title>serviço 2, janela 6</title>
+<circle cx="261.3" cy="441.0" r="3" fill="#e67e22"/><title>serviço 2, janela 7</title>
+<circle cx="327.0" cy="465.0" r="3" fill="#e67e22"/><title>serviço 2, janela 8</title>
+<circle cx="400.7" cy="453.5" r="3" fill="#e67e22"/><title>serviço 2, janela 9</title>
+<circle cx="462.8" cy="409.4" r="3" fill="#e67e22"/><title>serviço 2, janela 10</title>
+<circle cx="496.6" cy="344.7" r="3" fill="#e67e22"/><title>serviço 2, janela 11</title>
+<path d="M95.0,530.0 L416.3,201.1" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M416.3,201.1 L343.5,206.3" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M343.5,206.3 L274.3,245.2" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M274.3,245.2 L227.4,307.4" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M227.4,307.4 L215.3,376.2" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M215.3,376.2 L241.1,433.3" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M241.1,433.3 L298.1,463.3" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M298.1,463.3 L370.9,458.1" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M370.9,458.1 L440.1,419.2" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M440.1,419.2 L487.0,357.0" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M487.0,357.0 L499.1,288.2" fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#arrow)"/>
+<circle cx="95.0" cy="530.0" r="3" fill="#2e8b57"/><title>serviço 3, janela 0</title>
+<circle cx="416.3" cy="201.1" r="3" fill="#2e8b57"/><title>serviço 3, janela 1</title>
+<circle cx="343.5" cy="206.3" r="3" fill="#2e8b57"/><title>serviço 3, janela 2</title>
+<circle cx="274.3" cy="245.2" r="3" fill="#2e8b57"/><title>serviço 3, janela 3</title>
+<circle cx="227.4" cy="307.4" r="3" fill="#2e8b57"/><title>serviço 3, janela 4</title>
+<circle cx="215.3" cy="376.2" r="3" fill="#2e8b57"/><title>serviço 3, janela 5</title>
+<circle cx="241.1" cy="433.3" r="3" fill="#2e8b57"/><title>serviço 3, janela 6</title>
+<circle cx="298.1" cy="463.3" r="3" fill="#2e8b57"/><title>serviço 3, janela 7</title>
+<circle cx="370.9" cy="458.1" r="3" fill="#2e8b57"/><title>serviço 3, janela 8</title>
+<circle cx="440.1" cy="419.2" r="3" fill="#2e8b57"/><title>serviço 3, janela 9</title>
+<circle cx="487.0" cy="357.0" r="3" fill="#2e8b57"/><title>serviço 3, janela 10</title>
+<circle cx="499.1" cy="288.2" r="3" fill="#2e8b57"/><title>serviço 3, janela 11</title>
+<path d="M141.0,484.0 L373.9,202.7" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M373.9,202.7 L300.8,236.1" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M300.8,236.1 L242.9,295.2" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M242.9,295.2 L215.6,364.3" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M215.6,364.3 L226.2,424.7" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M226.2,424.7 L271.9,460.4" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M271.9,460.4 L340.5,461.7" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M340.5,461.7 L413.6,428.3" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M413.6,428.3 L471.5,369.2" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M471.5,369.2 L498.8,300.1" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M498.8,300.1 L488.2,239.7" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+<circle cx="141.0" cy="484.0" r="3" fill="#9b59b6"/><title>serviço 4, janela 0</title>
+<circle cx="373.9" cy="202.7" r="3" fill="#9b59b6"/><title>serviço 4, janela 1</title>
+<circle cx="300.8" cy="236.1" r="3" fill="#9b59b6"/><title>serviço 4, janela 2</title>
+<circle cx="242.9" cy="295.2" r="3" fill="#9b59b6"/><title>serviço 4, janela 3</title>
+<circle cx="215.6" cy="364.3" r="3" fill="#9b59b6"/><title>serviço 4, janela 4</title>
+<circle cx="226.2" cy="424.7" r="3" fill="#9b59b6"/><title>serviço 4, janela 5</title>
+<circle cx="271.9" cy="460.4" r="3" fill="#9b59b6"/><title>serviço 4, janela 6</title>
+<circle cx="340.5" cy="461.7" r="3" fill="#9b59b6"/><title>serviço 4, janela 7</title>
+<circle cx="413.6" cy="428.3" r="3" fill="#9b59b6"/><title>serviço 4, janela 8</title>
+<circle cx="471.5" cy="369.2" r="3" fill="#9b59b6"/><title>serviço 4, janela 9</title>
+<circle cx="498.8" cy="300.1" r="3" fill="#9b59b6"/><title>serviço 4, janela 10</title>
+<circle cx="488.2" cy="239.7" r="3" fill="#9b59b6"/><title>serviço 4, janela 11</title>
+</g>
+<path d="M549 524 L561 536 M549 536 L561 524" stroke="#111" stroke-width="3"/>
+<circle cx="420.3" cy="204.7" r="6" fill="#d33"/>
+<text x="380" y="62" font-family="sans-serif" font-size="12">fronteira r = √(2−√2)</text>
+<text x="550" y="518" text-anchor="end" font-family="sans-serif" font-size="12">A=(1,0)</text>
+<text x="429.2691193458118" y="195.73088065418818" font-family="sans-serif" font-size="11">B45</text>
+<text x="310" y="48" text-anchor="middle" font-family="sans-serif" font-size="11">B45=(1/√2,1/√2); região sombreada: D≤r</text>
+<text x="310" y="565" text-anchor="middle" font-family="sans-serif" font-size="11">Setas indicam ordem temporal (janela 0 → 11); círculo cortado pelo domínio quadrado.</text>
+<text x="95.0" y="548" text-anchor="middle" font-family="sans-serif" font-size="10">0</text>
+<text x="87" y="534.0" text-anchor="end" font-family="sans-serif" font-size="10">0</text>
+<text x="210.0" y="548" text-anchor="middle" font-family="sans-serif" font-size="10">0.25</text>
+<text x="87" y="419.0" text-anchor="end" font-family="sans-serif" font-size="10">0.25</text>
+<text x="325.0" y="548" text-anchor="middle" font-family="sans-serif" font-size="10">0.5</text>
+<text x="87" y="304.0" text-anchor="end" font-family="sans-serif" font-size="10">0.5</text>
+<text x="440.0" y="548" text-anchor="middle" font-family="sans-serif" font-size="10">0.75</text>
+<text x="87" y="189.0" text-anchor="end" font-family="sans-serif" font-size="10">0.75</text>
+<text x="555.0" y="548" text-anchor="middle" font-family="sans-serif" font-size="10">1</text>
+<text x="87" y="74.0" text-anchor="end" font-family="sans-serif" font-size="10">1</text>
+</svg>

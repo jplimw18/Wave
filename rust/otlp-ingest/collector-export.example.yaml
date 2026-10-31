@@ -1,0 +1,15 @@
+# Fragmento para o Collector contrib 0.147.0 já utilizado no lab.
+# Mesclar na configuração existente; usar DNS/rota realmente acessível do pod.
+exporters:
+  otlp/wave:
+    endpoint: wave-otlp-ingest.aim-lab.svc.cluster.local:4317
+    tls:
+      insecure: true # exclusivamente laboratório local
+    sending_queue:
+      enabled: true
+    retry_on_failure:
+      enabled: true
+service:
+  pipelines:
+    metrics:
+      exporters: [debug, prometheus, otlp/wave]
