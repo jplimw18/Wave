@@ -1,0 +1,12 @@
+{
+  "model_id": "s-fixed-reference-quality-v3",
+  "S_reference": 1.0,
+  "throughput_reference_per_second": 40.0,
+  "latency_reference_seconds": 0.1,
+  "configuration_fixed_before_collection": true,
+  "S_interpretation": "Referencia geometrica fixa; nao mede infraestrutura ou CPU",
+  "P_definition": "S * clip(goodput/Tref * Lref/max(mean_latency,Lref),0,1)",
+  "Q_definition": "sqrt(S-P)*sqrt(S+P)",
+  "origin": "Referencias experimentais declaradas, nao capacidade validada",
+  "note": "CPU e RSS preservados como covariaveis"
+}

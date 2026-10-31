@@ -1,5 +1,7 @@
 # Contrato de observações para futura paridade Python/Rust
 
+**Pipeline principal v3:** o [contrato de hipotenusa](HIPOTENUSA_PIPELINE.md) acrescenta observações→Sref/alpha→P restrito→Q residual→D→ondas→tensor, com adaptação explícita do envelope Kubernetes e novo `model_id`. `math/hypotenuse_lab/test_pipeline.py` verifica esse fluxo, separadamente dos contratos v1/v2 preservados aqui. Nenhuma ABI definitiva ou paridade Rust adicional é afirmada.
+
 **Contrato adicional v2:** `bounded_fixtures.json`, `bounded_candidate.py` e `output/bounded_candidate_results.json` conservam a candidata normalizada com fronteira radial descrita em [FRONTEIRA_RADIAL.md](FRONTEIRA_RADIAL.md). A v1 abaixo permanece intacta. A v2 acrescenta campos de normalização/corte, `operational_state`, `boundary_radius`, `boundary_delta`, `boundary_status` e `geometrically_efficient`, com novo `model_id`. Classificações são comparadas exatamente; a tolerância absoluta 10⁻¹² da fronteira é diferente da tolerância usada para comparar resultados numéricos entre linguagens. Testes de paridade devem cobrir pontos no interior, na faixa de fronteira e fora dela, propagação de ausências e conservação dos valores cortados.
 
 Este é um formato versionado de casos de teste (fixtures), não uma ABI, um protocolo de transmissão ou uma mudança no OTLP. O receptor Rust permanece responsável por preservar mensagens oficiais; este avaliador Python opera depois da extração de uma janela. A futura extração Rust deve produzir a mesma observação sem misturar transporte, agregação e cálculo de índices.

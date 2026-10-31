@@ -1,0 +1,5 @@
+NAME             READY   IMAGE                                          CPU_LIMIT   MEM_LIMIT
+api-a            1       aim-api:lab-v1                                 500m        128Mi
+api-b            1       aim-api:lab-v1                                 500m        128Mi
+otel-collector   1       otel/opentelemetry-collector-contrib:0.147.0   500m        256Mi
+postgres         1       postgres:17.4                                  1           384Mi

@@ -1,0 +1,15 @@
+{
+  "start_utc": "2026-10-31T02:54:48.864551+00:00",
+  "end_utc": "2026-10-31T02:55:39.053699+00:00",
+  "windows": 20,
+  "services": [
+    "api-a",
+    "api-b"
+  ],
+  "completed": 1720,
+  "failed": 110,
+  "transport_failures": 0,
+  "counter_resets": 0,
+  "pod_restarts_during_capture": 0,
+  "checks": "contadores cliente-servidor, erros404, identidades/reinicios pods e snapshot Collector verificados"
+}
