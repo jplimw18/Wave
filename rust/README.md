@@ -97,4 +97,3 @@ A matriz não recupera as métricas agregadas. V não substitui estado operacion
 Qv não mede desperdício físico e efficiency_assessment permanece nao_avaliada.
 SVD/HOSVD e aprendizagem continuam no laboratório Python, não foram portadas
 como parte desta fundação. Ver ../docs/extractor/FUNDACAO_RUST.md.
-
