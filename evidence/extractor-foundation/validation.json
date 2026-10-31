@@ -1,0 +1,21 @@
+{
+  "rust_version": "1.90.0",
+  "rust_workspace_tests_passed": 19,
+  "baseline_python_tests_passed": 56,
+  "parity_windows": 40,
+  "parity_fields_per_window": 26,
+  "parity_max_absolute_error": 2.220446049250313e-16,
+  "replay_capture_sha256": "a4b1f61a7df5215fb103625f61e2d42bd5c3b99e31797811eebd1bb3fee441b0",
+  "replay_output_sha256": "9a51e1eeb539f02d151bc34abe8fb6a37e7dbcfeb70f8aa7567f8baa315544a2",
+  "replay_records": 20,
+  "replay_states": {
+    "ocioso_no_handler": 4,
+    "ativo_no_handler": 16
+  },
+  "replay_checked_field_error": 0.0,
+  "clippy": "PASS -D warnings",
+  "fmt": "PASS",
+  "platform": "Docker Linux; Windows native not validated",
+  "transport_check": "official gRPC request -> receiver journal -> extractor CLI",
+  "scope": "foundation; OTLP-to-window aggregation is not implemented"
+}

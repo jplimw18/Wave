@@ -1,0 +1,19 @@
+[package]
+name = "wave-extractor"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+
+[dependencies]
+wave-extractor-core = { path = "../extractor-core" }
+wave-otlp-ingest = { path = "../otlp-ingest" }
+serde_json = "1"
+prost = "0.14"
+opentelemetry-proto = { version = "=0.32.0", default-features = false, features = ["gen-tonic", "metrics", "with-serde"] }
+tempfile = "3"
+base64 = "0.22"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "sync"] }
+tokio-stream = { version = "0.1", features = ["net"] }
+tonic = { version = "0.14", features = ["transport"] }

@@ -1,0 +1,27 @@
+name: Fundação Rust
+
+on:
+  pull_request:
+    branches: [dev]
+    paths: ['rust/**', 'math/activity_lab/output/**', '.github/workflows/rust.yml']
+  push:
+    branches: [dev]
+    paths: ['rust/**', 'math/activity_lab/output/**', '.github/workflows/rust.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    container: rust:1.90-bookworm@sha256:3914072ca0c3b8aad871db9169a651ccfce30cf58303e5d6f2db16d1d8a7e58f
+    defaults:
+      run:
+        working-directory: rust
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: rustup component add rustfmt clippy
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - run: cargo test --workspace --locked -- --nocapture

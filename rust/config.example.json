@@ -1,0 +1,7 @@
+{
+  "model_id": "activity-pending-attenuation-v4",
+  "s0": 1.0,
+  "throughput_per_second": 40.0,
+  "latency_seconds": 0.1,
+  "k_per_second": 5.0
+}

@@ -100,9 +100,15 @@ mod tests {
 
     #[tokio::test]
     async fn write_failure_must_not_acknowledge_or_accept_next_batch() {
-        let file = std::fs::OpenOptions::new().write(true).open("/dev/full").unwrap();
+        let file = std::fs::OpenOptions::new()
+            .write(true)
+            .open("/dev/full")
+            .unwrap();
         let sink = Ingest {
-            journal: Arc::new(Mutex::new(Journal { file: File::from_std(file), failed: false })),
+            journal: Arc::new(Mutex::new(Journal {
+                file: File::from_std(file),
+                failed: false,
+            })),
             pending: Arc::new(Semaphore::new(32)),
         };
         let request = || Request::new(ExportMetricsServiceRequest::default());
