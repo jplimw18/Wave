@@ -1,0 +1,6 @@
+source_kind,metric,value
+SINTETICO,tensor_shape,4;3;12
+SINTETICO,service1_pqd_matrix_rank,3
+SINTETICO,service1_singular_values,3.2983743728180235;1.2282549972216064;0.4136618891527984
+SINTETICO,hosvd_full_relative_error,5.940136878640796e-16
+SINTETICO,hosvd_truncated_relative_error,0.17243203652316455
