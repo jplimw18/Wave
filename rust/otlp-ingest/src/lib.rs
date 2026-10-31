@@ -76,6 +76,7 @@ impl MetricsService for Ingest {
             }
             let write = async {
                 journal.file.write_all(&frame).await?;
+                journal.file.flush().await?;
                 journal.file.sync_data().await
             }
             .await;
@@ -90,5 +91,24 @@ impl MetricsService for Ingest {
         })
         .await
         .map_err(|_| Status::internal("journal task failed"))?
+    }
+}
+
+#[cfg(all(test, target_os = "linux"))]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn write_failure_must_not_acknowledge_or_accept_next_batch() {
+        let file = std::fs::OpenOptions::new().write(true).open("/dev/full").unwrap();
+        let sink = Ingest {
+            journal: Arc::new(Mutex::new(Journal { file: File::from_std(file), failed: false })),
+            pending: Arc::new(Semaphore::new(32)),
+        };
+        let request = || Request::new(ExportMetricsServiceRequest::default());
+        assert!(sink.export(request()).await.is_err());
+        let retry = sink.export(request()).await.unwrap_err();
+        assert_eq!(retry.code(), tonic::Code::Unavailable);
+        assert!(retry.message().contains("restart with a new path"));
     }
 }
